@@ -7,6 +7,7 @@ Scrape reviews from the Google Play Store, preprocess them into a clean, analysi
 - Bank of Abyssinia (BOA)
 - Dashen Bank
 # Methodology
+# Task 1: Data Collection and Preprocessing
 ## Data Collection
 
 Reviews were scraped using the google-play-scraper Python library.
@@ -31,6 +32,18 @@ Minimum target:
 # Limitations
 ## Limitations
 
-Some applications may expose fewer public reviews depending on Google Play Store availability and API limitations.
+Some applications may expose fewer public reviews depending on Google Play Store availability and API limitations.p
+# Task 2: Sentiment and Thematic Analysis
+# Objective 
+Quantify review sentiment and identify recurring themes to uncover satisfaction drivers and pain points for each bank.
+this objective achieved by:
+Download spaCy Language Model and Build NLP Pipeline that satsfies
+-Tokenization
+-Stop-word removal
+-Lemmatization
+-Modular reusable pipeline
+# Sentiment Analysis Using DistilBERT
+# Why DistilBERT Is Better
+DistilBERT was selected because transformer-based models better understand contextual sentiment in financial/mobile banking reviews compared to lexicon-based approaches like VADER.
 
 

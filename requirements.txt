@@ -2,3 +2,9 @@ google-play-scraper
 pandas
 numpy
 pytest
+transformers
+torch
+scikit-learn
+spacy
+nltk
+textblob
