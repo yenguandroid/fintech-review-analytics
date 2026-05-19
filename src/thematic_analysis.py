@@ -1,50 +1,37 @@
-import pandas as pd
+# Thematic Analysis Using TF-IDF
+
 from sklearn.feature_extraction.text import TfidfVectorizer
-from nlp_pipeline import preprocess_text
 
-# Load data
-df = pd.read_csv("data/raw/sentiment_results.csv")
-
-# Preprocess reviews
-df["processed_review"] = df["review"].apply(preprocess_text)
-
-# TF-IDF Vectorizer
+# Create vectorizer
 vectorizer = TfidfVectorizer(
     max_features=50,
-    ngram_range=(1,2)
+    ngram_range=(1, 2)
 )
 
-X = vectorizer.fit_transform(df["processed_review"])
+def extract_keywords(text_data):
 
-keywords = vectorizer.get_feature_names_out()
+    X = vectorizer.fit_transform(text_data)
 
-print("Top Keywords:")
-print(keywords)
+    keywords = vectorizer.get_feature_names_out()
 
-# Authomatic Theme Assignment (Simple Keyword Matching)
+    return keywords.tolist()
 
-def assign_theme(text):
 
-    text = text.lower()
+def assign_theme(review):
 
-    if "login" in text or "password" in text:
-        return "Account Access Issues"
+    review = str(review).lower()
 
-    elif "transfer" in text or "payment" in text:
-        return "Transaction Performance"
+    if any(word in review for word in ["loan", "credit", "borrow"]):
+        return "Loan Services"
 
-    elif "ui" in text or "interface" in text:
-        return "UI & Design"
+    elif any(word in review for word in ["transfer", "transaction", "payment"]):
+        return "Money Transfer"
 
-    elif "support" in text or "service" in text:
+    elif any(word in review for word in ["app", "bug", "crash", "error"]):
+        return "App Performance"
+
+    elif any(word in review for word in ["support", "service", "help"]):
         return "Customer Support"
 
     else:
-        return "Feature Requests"
-
-df["identified_theme"] = df["review"].apply(assign_theme)
-
-# Save final results
-df.to_csv("data/raw/final_thematic_output.csv", index=False)
-
-print(df.head())
+        return "Other"
