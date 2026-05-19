@@ -45,5 +45,24 @@ Download spaCy Language Model and Build NLP Pipeline that satsfies
 # Sentiment Analysis Using DistilBERT
 # Why DistilBERT Is Better
 DistilBERT was selected because transformer-based models better understand contextual sentiment in financial/mobile banking reviews compared to lexicon-based approaches like VADER.
+-Thematic Analysis
+-Aggregation Analysis
+## Key Business Insights
+Key Insights
+
+## CBE
+- Frequent complaints related to login and transfer failures
+- High number of negative reviews connected to server downtime
+
+## BOA
+- Better UI satisfaction compared to competitors
+- Positive feedback regarding ease of use
+
+## Dashen
+- Users request additional features and faster transactions
+
+## General Findings
+- Transaction delays are a major pain point across all banks
+- Positive sentiment is strongly associated with UI simplicity
 
 
