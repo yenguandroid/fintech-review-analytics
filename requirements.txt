@@ -8,3 +8,5 @@ scikit-learn
 spacy
 nltk
 textblob
+psycopg2-binary
+sqlalchemy
