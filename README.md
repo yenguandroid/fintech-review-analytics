@@ -161,3 +161,56 @@ BOA → 500 reviews
 # Outcome
 
 A fully functional end-to-end data pipeline that transforms raw bank app reviews into structured, queryable business insights stored in PostgreSQL.
+
+# Task 4: Insights and Recommendations
+
+## Overview
+This task focuses on transforming sentiment and thematic analysis into actionable business insights for Ethiopian banking mobile applications.
+
+## Objectives
+- Analyze customer sentiment distribution across banks
+- Identify satisfaction drivers and pain points
+- Extract business-relevant themes
+- Provide data-driven recommendations
+
+## Banks Analyzed
+- Commercial Bank of Ethiopia (CBE)
+- Bank of Abyssinia (BOA)
+- Dashen Bank
+
+## Methodology
+- Sentiment analysis using transformer-based model (DistilBERT)
+- Theme extraction using NLP preprocessing and keyword grouping
+- Aggregation of sentiment and ratings
+- Visualization using Matplotlib
+
+## Key Outputs
+- Sentiment distribution charts
+- Rating distribution plots
+- Theme frequency analysis
+- Cross-bank comparison
+
+## Key Insights
+- CBE has the highest number of negative reviews due to system issues
+- BOA performs well in UI/UX satisfaction
+- Dashen Bank has the highest overall sentiment score
+
+## Recommendations
+Each bank received at least two actionable recommendations based on user feedback patterns.
+
+## Tools Used
+- Python
+- Pandas
+- Matplotlib
+- Scikit-learn
+- Transformers (DistilBERT)
+
+## Repository Structure
+notebooks/
+└── task4_insights.ipynb
+
+reports/
+└── final_report.pdf
+
+src/
+└── visualization.py
