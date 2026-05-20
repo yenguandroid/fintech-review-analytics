@@ -54,27 +54,15 @@ review_df = df[[
     "source"
 ]]
 
-review_df["review_id"] = range(1, len(review_df) + 1)
-
-review_df = review_df[[
-    "review_id",
-    "bank_id",
-    "review_text",
-    "rating",
-    "review_date",
-    "sentiment_label",
-    "sentiment_score",
-    "identified_theme",
-    "source"
-]]
-
 
 # Insert into PostgreSQL
-review_df.to_sql(
-    "reviews",
-    engine,
-    if_exists="append",
-    index=False
-)
+with engine.begin() as conn:
+
+    review_df.to_sql(
+        "reviews",
+        conn,
+        if_exists="append",
+        index=False
+    )
 
 print("Data inserted successfully.")

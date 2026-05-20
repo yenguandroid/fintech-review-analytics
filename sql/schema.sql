@@ -4,16 +4,14 @@ CREATE TABLE IF NOT EXISTS banks (
     app_name VARCHAR(100)
 );
 
-DROP TABLE IF EXISTS reviews;
-
 CREATE TABLE reviews (
-    review_id TEXT PRIMARY KEY,
+    review_id SERIAL PRIMARY KEY,
     bank_id INTEGER REFERENCES banks(bank_id),
     review_text TEXT NOT NULL,
     rating INTEGER,
     review_date DATE,
-    sentiment_label TEXT,
+    sentiment_label VARCHAR(20),
     sentiment_score FLOAT,
-    identified_theme TEXT,
-    source TEXT
+    identified_theme VARCHAR(100),
+    source VARCHAR(50)
 );
