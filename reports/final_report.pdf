@@ -1,0 +1,38 @@
+TITLE
+Fintech Mobile Banking Customer Insights: Sentiment and Thematic Analysis
+1. Executive Summary
+
+This project analyzes over 1,200 mobile banking reviews from Ethiopian banks using NLP techniques. The goal is to understand customer sentiment, extract key themes, and provide actionable business insights.
+
+2. Methodology
+Data collected using Google Play scraping
+Cleaned and preprocessed using NLP pipeline
+Sentiment classification using DistilBERT
+Theme extraction using TF-IDF and keyword grouping
+Visualization using Matplotlib
+3. Key Findings
+Customer Satisfaction Drivers
+Simple UI design
+Fast navigation
+Reliable mobile access
+Pain Points
+Login and authentication failures
+Transaction delays
+App instability
+4. Bank Comparison
+CBE: Highest complaints, system reliability issues
+BOA: Best UI experience
+Dashen: Highest overall sentiment score
+5. Recommendations
+CBE
+Improve backend stability
+Fix authentication system
+BOA
+Improve app stability
+Add advanced features
+Dashen
+Improve transaction speed
+Expand feature offerings
+6. Conclusion
+
+The study shows that system performance and usability are the most important drivers of customer satisfaction in mobile banking applications.
