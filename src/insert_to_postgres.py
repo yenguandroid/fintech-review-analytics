@@ -4,6 +4,8 @@ from database import engine
 
 # Load processed dataset
 df = pd.read_csv("data/raw/final_thematic_output.csv")
+#print(df.columns)
+#print(df.head())
 
 # Insert banks
 banks = df["bank"].unique()
@@ -35,22 +37,26 @@ bank_mapping = dict(
     zip(bank_df["bank_name"], bank_df["bank_id"])
 )
 
-# Prepare reviews table
+# Prepare reviews table (correct mapping)
 df["bank_id"] = df["bank"].map(bank_mapping)
 
+df["review_text"] = df["review"]
+df["review_date"] = df["date"]
+
 review_df = df[[
-    "review_id",
     "bank_id",
-    "review",
+    "review_text",
     "rating",
-    "date",
+    "review_date",
     "sentiment_label",
     "sentiment_score",
     "identified_theme",
     "source"
 ]]
 
-review_df.columns = [
+review_df["review_id"] = range(1, len(review_df) + 1)
+
+review_df = review_df[[
     "review_id",
     "bank_id",
     "review_text",
@@ -60,7 +66,8 @@ review_df.columns = [
     "sentiment_score",
     "identified_theme",
     "source"
-]
+]]
+
 
 # Insert into PostgreSQL
 review_df.to_sql(

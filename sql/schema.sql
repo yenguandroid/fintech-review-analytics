@@ -1,22 +1,19 @@
-CREATE TABLE banks (
-    bank_id SERIAL PRIMARY KEY,
+CREATE TABLE IF NOT EXISTS banks (
+    id SERIAL PRIMARY KEY,
     bank_name VARCHAR(100) UNIQUE NOT NULL,
-    app_name VARCHAR(200)
+    app_name VARCHAR(100)
 );
+
+DROP TABLE IF EXISTS reviews;
 
 CREATE TABLE reviews (
     review_id TEXT PRIMARY KEY,
     bank_id INTEGER REFERENCES banks(bank_id),
-
     review_text TEXT NOT NULL,
     rating INTEGER,
-
     review_date DATE,
-
-    sentiment_label VARCHAR(20),
+    sentiment_label TEXT,
     sentiment_score FLOAT,
-
-    identified_theme VARCHAR(100),
-
-    source VARCHAR(50)
+    identified_theme TEXT,
+    source TEXT
 );
